@@ -3,31 +3,27 @@ import styled from 'styled-components';
 import About from './About'
 import Contact from './Contact';
 import Hero from './Hero';
-import Navigation from './Navigation';
+import Navigation2 from './Navigation2';
 import Services from './Services';
 
 
 const Home = () => {
   return (
-      <div>
-        <Navigation />
+      <Wrapper>
+        <Navigation2 />
         <main>
           <Hero/>
           <About />
-          {/* <Services/>
-          <Contact/> */}
+          <Services/>
+          <Contact/>
         </main>
-      </div>
+      </Wrapper>
   )
 }
 
 const Wrapper = styled.div`
 
-  @media (min-width: 992px) {
-  main {
-    padding-left: 160px;
-  }
-  }
+
 
 
 `
