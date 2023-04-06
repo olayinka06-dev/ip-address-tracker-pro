@@ -7,39 +7,44 @@ import {FaLinkedinIn} from "react-icons/fa";
 import bgImg from './images/hero-bg.jpg';
 import { Link } from 'react-router-dom';
 import Typical from 'react-typical';
-import Fade from 'react-reveal/Fade';
+import '../index.css';
 
 
 const Hero = () => {
+
+
+  window.addEventListener('load', function() {
+    var box1 = document.querySelector('.box-1');
+    box1.classList.add('slide-fade-in-one');
+  });
+  
   return (
     <Wrapper>
-    <section id="hero">
-      <div class="container">
-      <Fade right collapse>
-        <h1>Olayinka_Dev</h1>
-      </Fade>
-
-        <Typical
-          steps={['Im a', 10, 'Senior MERN Developer', 10]}
-          loop={Infinity}
-          wrapper="p"
-        />
-
-        <div class="social-links">
-          <Link to={'/'}><AiOutlineTwitter/></Link>
-          <Link to={'/'}><RiFacebookFill/></Link>
-          <Link to={'/'}><IoLogoInstagram/></Link>
-          <Link to={'/'}><FaLinkedinIn/></Link>
+      <div id="hero">
+        <div class="container box-1">
+          <h1>Olayinka<span>_Dev</span></h1>
+          <Typical
+            steps={[`I'm a Web-Developer`, 3000 , `I'm a Freelancer`, 3000, `I'm a Senior MERN Developer`, 3000]}
+            loop={Infinity}
+            wrapper="p"
+          />
+          <div class="social-links">
+            <Link to={'/'}><AiOutlineTwitter/></Link>
+            <Link to={'/'}><RiFacebookFill/></Link>
+            <Link to={'/'}><IoLogoInstagram/></Link>
+            <Link to={'/'}><FaLinkedinIn/></Link>
+          </div>
         </div>
       </div>
-    </section>
     </Wrapper>
   )
 }
 
-const Wrapper = styled.section`
 
-  section {
+
+const Wrapper = styled.div`
+
+  #hero {
     width: 100%;
     height: 100vh;
     background: url(${bgImg}) top right no-repeat;
@@ -49,27 +54,50 @@ const Wrapper = styled.section`
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
+    overflow: hidden;
   }
   @media (min-width: 992px) {
-    section {
+    #hero {
       padding-left: 350px;
     }
   }
 
-  section:before {
+  #hero:before {
     content: "";
-    background: rgba(255, 255, 255, 0.8);
+    background: var(--herobackground);
     position: absolute;
     bottom: 0;
     top: 0;
     left: 0;
     right: 0;
   }
-  /* @media (min-width: 1024px) {
-    #hero {
-      background-attachment: fixed;
+  .box-1 {
+    /* position: absolute;
+    top: 0;
+    left: 0; */
+    width: 100%;
+    overflow: hidden;
+    opacity: 0;
+    scale: 0;
+    transform: translateX(100%);
+    animation: slide-fade-in-one 1s forwards;
+  }
+
+  @keyframes slide-fade-in-one {
+    from {
+      opacity: 0;
+      transform: translateX(100%);
+      scale: 0;
+      overflow: hidden;
+
     }
-  } */
+    to {
+      opacity: 1;
+      transform: translateX(20px);
+      scale: 100%;
+      overflow: hidden;
+    }
+  }
   .container {
     position: relative;
     z-index: 2;
@@ -81,11 +109,13 @@ const Wrapper = styled.section`
     font-size: 64px;
     font-weight: 700;
     line-height: 56px;
-    color: #45505b;
+    color: var(--herocolor);
   }
-
+  .container span{
+    color: var(--herospan)
+  }
   .container p {
-    color: #45505b;
+    color: var(--text);
     margin: 15px 0 0 0;
     font-size: 26px;
     font-family: "Poppins", sans-serif;
@@ -97,24 +127,33 @@ const Wrapper = styled.section`
   .social-links a {
     font-size: 24px;
     display: inline-block;
-    color: #45505b;
+    color: var(--social);
     line-height: 1;
     margin-right: 20px;
     transition: 0.3s;
+    padding: 9px 12px;
+    border-radius: 50%;
   }
 
   .social-links a:hover {
-    color: #0563bb;
+    color: white;
+    background: linear-gradient(to right, hsl(136, 65%, 51%), hsl(192, 70%, 51%) );
   }
+
 
   @media screen and (max-width: 992px) {
     #hero {
       text-align: center;
+      width: 100%;
+    overflow: hidden;
+
     }
     .container{
       z-index: 50 !important;
       min-width: 0;
       width: 100%;
+      overflow: hidden;
+
     }
     .container h1 {
       font-size: 32px;
@@ -132,18 +171,3 @@ const Wrapper = styled.section`
 `
 
 export default Hero;
-
-// import React, { Component } from 'react'
-// import Typical from 'react-typical'
- 
-// class Example extends React.Component {
-//   render () {
-//     return (
-//       <Typical
-//         steps={['Hello', 1000, 'Hello world!', 500]}
-//         loop={Infinity}
-//         wrapper="p"
-//       />
-//     )
-//   }
-// }

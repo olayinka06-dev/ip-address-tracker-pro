@@ -13,46 +13,122 @@ h5,
 h6 {
   font-family: "Raleway", sans-serif;
 }
-.toggle {
-  border: none;
-  background-color:  #0563bb;
-  cursor: pointer;
-  min-width: 40px;
-  height: 40px;
-  display: none;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 5px;
-  transition: all .2s ease-in-out;
-  position: fixed;
-  top: 2%;
-  right: 2%;
-  border-radius: 50%;
+p{
+  font-family: "Open Sans", sans-serif;
 }
-.toggle div{
-  background-color: white;
-  height: 2px;
-  width: 25px;
-  transition: all .4s ease;
-  margin-top: 5px 0;
+:root {
+  --mainbody: white;
+  --herobackground: rgba(255, 255, 255, 0.8);
+  --activehover: linear-gradient(to right, hsl(136, 65%, 51%), hsl(192, 70%, 51%));
+  --gradientbackground: rgb(242,243,245);
+  --gradientcolor: rgb(69,80,91);
+  --herocolor: hsl(136, 65%, 51%);
+  --herospan: hsl(192, 70%, 51%);
+  --text: #45505b;
+  --social: #45505b;
+  --sectionbackground: white;
+  /* --container: white;
+  --content: white;
+  --contentcolor: black;
+  --border:rgb(243,243,243) */
 }
-.toggle.open .first {
-  transform: rotate(-45deg) translate(1px, 11px);
-  margin-right: 15px;
+
+.light-mode{
+  --mainbody: white;
+  --herobackground: rgba(255, 255, 255, 0.8);
+  --activehover: linear-gradient(to right, hsl(136, 65%, 51%), hsl(192, 70%, 51%));
+  --gradientbackground: rgb(242,243,245);
+  --gradientcolor: rgb(69,80,91);
+  --herocolor: hsl(136, 65%, 51%);
+  --herospan: hsl(192, 70%, 51%);
+  --text: #45505b;
+  --social: #45505b;
+  --sectionbackground: white;
 }
-.toggle.open .second {
-  opacity: 0;
+
+.dark-mode{
+--mainbody: black;
+--herobackground: rgba(5, 13, 24, 0.3);
+--activehover: linear-gradient( to right, rgb(241, 169, 34), hsl(353, 87%, 64%));
+--gradientbackground: hsl(209, 23%, 22%);
+--gradientcolor: white;
+--herocolor: rgb(241, 169, 34);
+--herospan: hsl(353, 87%, 64%);
+--text: white;
+--social: rgb(69,80,91);
+--sectionbackground: hsl(209, 23%, 22%);
 }
-.toggle.open .third {
-  transform: rotate(45deg) translate(1px, -11px);
-  margin-right: 15px;
+
+.app{
+background-color: var(--mainbody) !important;
 
 }
-@media screen and (max-width: 992px) {
-  .toggle{
-    display: flex;
+
+section {
+  /* padding: 60px 0; */
+  overflow: hidden;
+}
+
+.section-title {
+  width: 100%;
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+.section-title h2 {
+  font-size: 32px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  position: relative;
+  color: var(--herocolor);
+}
+
+.section-title h2::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 150px;
+  height: 1px;
+  background: #ddd;
+  bottom: 1px;
+  left: calc(48% - 60px);
+}
+
+.section-title h2::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 40px;
+  height: 3px;
+  background: var(--activehover);
+  bottom: 0;
+  left: calc(48% - 20px);
+  animation: animate 4s linear infinite;
+
+}
+@keyframes animate{
+    0%{
+        width: 40px;
+    }
+    50%{
+        width: 80px;
+    }
+    100%{
+        width: 40px;
+    }
+}
+
+.section-title p {
+  margin-bottom: 0;
+  color: var(--text);
+}
+
+@media (min-width: 992px) {
+  section {
+    padding-left: 160px;
   }
-
 }
+
 

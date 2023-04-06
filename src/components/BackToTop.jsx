@@ -44,7 +44,7 @@ const Wrapper = styled.div`
     bottom: 3%;
     left: 90%;
     padding: 5px 15px;
-    background-color: #FB9B02;
+    background-color:  #0563bb;
     border-radius: 50%;
     visibility: hidden;
     opacity: 0;
