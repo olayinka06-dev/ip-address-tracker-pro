@@ -36,7 +36,7 @@ const Navigation2 = ({backgroundSwitcher, handleToggleSwitcher}) => {
     <aside  className={`${menu ? 'mobile-toggler' : ''}`}>
       <div class="profile box-4">
         <img src={profileimg} alt={profileimg} />
-        <h1 class="text-light">Alex Smith</h1>
+        <h1 class="text-light">Olayinka_Dev</h1>
       </div>
       <ul className='aside-desktop'>
         <div className='box-2'>

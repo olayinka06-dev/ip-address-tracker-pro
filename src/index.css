@@ -50,13 +50,20 @@ p{
 --mainbody: black;
 --herobackground: rgba(5, 13, 24, 0.3);
 --activehover: linear-gradient( to right, rgb(241, 169, 34), hsl(353, 87%, 64%));
+/* --activehover: linear-gradient(to right, hsl(206, 48%, 27%), hsl(229, 64%, 46%)); */
+
 --gradientbackground: hsl(209, 23%, 22%);
 --gradientcolor: white;
---herocolor: rgb(241, 169, 34);
---herospan: hsl(353, 87%, 64%);
+/* --herocolor: rgb(241, 169, 34); */
+/* --herocolor:   hsl(229, 64%, 46%); */
+--herocolor:   red;
+--herospan:  red;
+/* --herospan:  hsl(229, 64%, 46%); */
+/* --herospan: hsl(353, 87%, 64%); */
 --text: white;
 --social: rgb(69,80,91);
---sectionbackground: hsl(209, 23%, 22%);
+/* --sectionbackground: hsl(209, 23%, 22%); */
+--sectionbackground: hsl(0%, 0%, 0%);
 }
 
 .app{
