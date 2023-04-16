@@ -2,7 +2,6 @@ import React from 'react'
 import styled from 'styled-components';
 import profileimg2 from './images/profile2-img.jpg';
 
-
 const About = () => {
   return (
     <Wrapper>
@@ -19,15 +18,11 @@ const About = () => {
             Thank you for visiting my portfolio website, and I look forward to connecting with you!
           </p> */}
           <p>
-          Hello, my name is [Your Name], and I am a frontend and backend developer with experience in UI/UX design. I am passionate about creating responsive and user-friendly web applications that provide a great user experience.
-
-As a full-stack developer, I am proficient in languages such as HTML, CSS, JavaScript, Express js, ejs, Mongo Db and Mongoose. I enjoy working on both the frontend and backend of web applications and have experience in developing dynamic web pages and user interfaces that are visually appealing and easy to use.
-
-In addition to my technical skills, I have experience working as a UI/UX designer, which has given me a keen eye for design and user experience. I strive to create beautiful and intuitive user interfaces that are easy to navigate and use.
-
-As a freelancer, I have had the opportunity to work with a variety of clients and industries, which has helped me develop strong communication and project management skills. I am committed to delivering high-quality work that meets my clients' needs and exceeds their expectations.
-
-Thank you for visiting my portfolio website, and I look forward to the opportunity to work with you!
+            Hello, my name is Idiagbon Saadu Abdulrahman also Known as Olayinka_Dev, and I am a frontend and backend developer with experience in UI/UX design. I am passionate about creating responsive and user-friendly web applications that provide a great user experience.
+            As a full-stack developer, I am proficient in languages such as HTML, CSS, JavaScript, Express js, ejs, Mongo Db and Mongoose. I enjoy working on both the frontend and backend of web applications and have experience in developing dynamic web pages and user interfaces that are visually appealing and easy to use.
+            In addition to my technical skills, I have experience working as a UI/UX designer, which has given me a keen eye for design and user experience. I strive to create beautiful and intuitive user interfaces that are easy to navigate and use.
+            As a freelancer, I have had the opportunity to work with a variety of clients and industries, which has helped me develop strong communication and project management skills. I am committed to delivering high-quality work that meets my clients' needs and exceeds their expectations.
+            Thank you for visiting my portfolio website, and I look forward to the opportunity to work with you!
           </p>
         </div>
 
@@ -61,19 +56,9 @@ Thank you for visiting my portfolio website, and I look forward to the opportuni
             </p>
           </div>
         </div>
-        {/* Hello, my name is [Your Name], and I am a frontend and backend developer with experience in UI/UX design. I am passionate about creating responsive and user-friendly web applications that provide a great user experience.
-
-As a full-stack developer, I am proficient in languages such as HTML, CSS, JavaScript, PHP, and Python. I enjoy working on both the frontend and backend of web applications and have experience in developing dynamic web pages and user interfaces that are visually appealing and easy to use.
-
-In addition to my technical skills, I have experience working as a UI/UX designer, which has given me a keen eye for design and user experience. I strive to create beautiful and intuitive user interfaces that are easy to navigate and use.
-
-As a freelancer, I have had the opportunity to work with a variety of clients and industries, which has helped me develop strong communication and project management skills. I am committed to delivering high-quality work that meets my clients' needs and exceeds their expectations.
-
-Thank you for visiting my portfolio website, and I look forward to the opportunity to work with you! */}
-
       </div>
     </section> 
-    <section id="skills" class="skills section-bg">
+    {/* <section id="skills" class="skills section-bg">
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
@@ -136,7 +121,7 @@ Thank you for visiting my portfolio website, and I look forward to the opportuni
         </div>
 
       </div>
-    </section>     
+    </section>      */}
     </Wrapper>
   )
 }

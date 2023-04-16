@@ -29,59 +29,59 @@ const Navigation2 = ({backgroundSwitcher, handleToggleSwitcher}) => {
     var box4 = document.querySelector('.box-4');
     box2.classList.add('slide-fade-in-two');
     box3.classList.add('slide-fade-in-three');
+    box4.classList.add('slide-fade-in-four');
   });
 
   return (
     <Wrapper>
-    <aside  className={`${menu ? 'mobile-toggler' : ''}`}>
-      <div class="profile box-4">
-        <img src={profileimg} alt={profileimg} />
-        <h1 class="text-light">Olayinka_Dev</h1>
-      </div>
-      <ul className='aside-desktop'>
-        <div className='box-2'>
-          <li className={activeLink === 'hero' ? 'active' : ''}>
-            <Link to="hero" smooth={true} duration={500} spy={true} offset={-70} onClick={() => handleSetActive('hero')}><HiOutlineHome className='icon'/>Home</Link>
-          </li>
+      <aside  className={`${menu ? 'mobile-toggler' : ''}`}>
+        <div class="profile box-4">
+          <img src={profileimg} alt={profileimg} />
+          <h1 class="text-light">Olayinka_Dev</h1>
         </div>
-        <div className='box-3'>
-          <li className={activeLink === 'about' ? 'active' : ''}>
-            <Link to="about" smooth={true} duration={500} spy={true} offset={-70} onClick={() => handleSetActive('about')}><RxPerson className='icon'/>About</Link>
-          </li>
-        </div>
-        <div className='box-2'>
-          <li className={activeLink === 'resume' ? 'active' : ''}>
-            <Link to="resume" smooth={true} duration={500} spy={true} offset={-70} onClick={() => handleSetActive('resume')}><AiOutlineFile className='icon'/>Resume</Link>
-          </li>
-        </div>
-        <div className='box-3'>
-          <li className={activeLink === 'portfolio' ? 'active' : ''}>
-            <Link to="portfolio" smooth={true} duration={500} spy={true} offset={-70} onClick={() => handleSetActive('portfolio')}><BiBookContent className='icon'/>Portfolio</Link>
-          </li>
-        </div>
-        <div className='box-2'>
-          <li className={activeLink === 'services' ? 'active' : ''}>
-            <Link to="services" smooth={true} duration={500} spy={true} offset={-70} onClick={() => handleSetActive('services')}><CgDatabase className='icon'/>Services</Link>
-          </li>
-        </div>
-        <div className='box-3'>
-          <li className={activeLink === 'contact' ? 'active' : ''}>
-            <Link to="contact" smooth={true} duration={500} spy={true} offset={-70} onClick={() => handleSetActive('contact')}><AiOutlineMail className='icon'/>Contact</Link>
-          </li>
-        </div>
-        <div className='box-2'>
-          <li>
-              <Link onClick={handleToggleSwitcher}>{backgroundSwitcher}</Link>
-          </li>
-        </div>
-      </ul>
-      <button onClick={toggleMenu} className={`${menu ? 'toggle open' : 'toggle'}`}>
-        <div className="first"></div>
-        <div className="second"></div>
-        <div className="third"></div>
-      </button>
-    </aside>
-
+        <ul className='aside-desktop'>
+          <div className='box-2'>
+            <li className={activeLink === 'hero' ? 'active' : ''}>
+              <Link to="hero" smooth={true} duration={500} spy={true} offset={-70} onClick={() => handleSetActive('hero')}><HiOutlineHome className='icon'/>Home</Link>
+            </li>
+          </div>
+          <div className='box-3'>
+            <li className={activeLink === 'about' ? 'active' : ''}>
+              <Link to="about" smooth={true} duration={500} spy={true} offset={-70} onClick={() => handleSetActive('about')}><RxPerson className='icon'/>About</Link>
+            </li>
+          </div>
+          <div className='box-2'>
+            <li className={activeLink === 'resume' ? 'active' : ''}>
+              <Link to="resume" smooth={true} duration={500} spy={true} offset={-70} onClick={() => handleSetActive('resume')}><AiOutlineFile className='icon'/>Resume</Link>
+            </li>
+          </div>
+          <div className='box-3'>
+            <li className={activeLink === 'portfolio' ? 'active' : ''}>
+              <Link to="portfolio" smooth={true} duration={500} spy={true} offset={-70} onClick={() => handleSetActive('portfolio')}><BiBookContent className='icon'/>Portfolio</Link>
+            </li>
+          </div>
+          <div className='box-2'>
+            <li className={activeLink === 'services' ? 'active' : ''}>
+              <Link to="services" smooth={true} duration={500} spy={true} offset={-70} onClick={() => handleSetActive('services')}><CgDatabase className='icon'/>Services</Link>
+            </li>
+          </div>
+          <div className='box-3'>
+            <li className={activeLink === 'contact' ? 'active' : ''}>
+              <Link to="contact" smooth={true} duration={500} spy={true} offset={-70} onClick={() => handleSetActive('contact')}><AiOutlineMail className='icon'/>Contact</Link>
+            </li>
+          </div>
+          <div className='box-2'>
+            <li>
+                <Link onClick={handleToggleSwitcher}>{backgroundSwitcher}</Link>
+            </li>
+          </div>
+        </ul>
+        <button onClick={toggleMenu} className={`${menu ? 'toggle open' : 'toggle'}`}>
+          <div className="first"></div>
+          <div className="second"></div>
+          <div className="third"></div>
+        </button>
+      </aside>
     </Wrapper>
   );
 }

@@ -23,11 +23,12 @@ const Hero = () => {
       <div id="hero">
         <div class="container box-1">
           <h1>Olayinka<span>_Dev</span></h1>
-          <Typical
+          <p>I'm a Senior Web-Developer</p>
+          {/* <Typical
             steps={[`I'm a Web-Developer`, 3000 , `I'm a Freelancer`, 3000, `I'm a Senior MERN Developer`, 3000]}
             loop={Infinity}
             wrapper="p"
-          />
+          /> */}
           <div class="social-links">
             <Link to={'/'}><AiOutlineTwitter/></Link>
             <Link to={'/'}><RiFacebookFill/></Link>
