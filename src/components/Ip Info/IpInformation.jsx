@@ -66,7 +66,7 @@ const IpInformation = ({ipInfo, loading}) => {
               <Info>
                 <h4>Location</h4>
                 <Showmore>
-                  <h2>{ipInfo.location.country}</h2>
+                  <h2><span>Country: </span>{ipInfo.location.country}</h2>
                   <h2><span>Region:</span> {ipInfo.location.region}</h2>
                   <h2><span>City: </span>{ipInfo.location.city}</h2>
                   <h2><span>PostalCode: </span> {ipInfo.location.postalCode}</h2>
@@ -135,7 +135,7 @@ const IpInfoMobile = styled.div`
     width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     background-color: white;
     border-radius: 20px;
     z-index: 20;
@@ -193,7 +193,8 @@ const Info = styled.div`
   @media screen and (max-width: 950px) {
     gap: 8px;
     align-items: center;
-    border: none;
+    border-bottom: 1px solid black;
+    border-collapse: collapse;
     h2{
       font-size: 16px;
     }
