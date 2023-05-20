@@ -19,7 +19,7 @@ const MapSketch = ({ipInfo}) => {
             }).addTo(leafletMap);
             L.marker([ipInfo.location.lat, ipInfo.location.lng], {
                 icon: L.divIcon({
-                  html: ReactDOMServer.renderToString(<FaMapMarkerAlt style={{fontSize: "30px"}} />)
+                  html: ReactDOMServer.renderToString(<FaMapMarkerAlt style={{fontSize: "30px",position: "relative", bottom: "10px", right: "10px",}} />)
                 })
               })
                 .addTo(leafletMap)
