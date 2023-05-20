@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import '../../index.css';
-import {MdLocationPin} from 'react-icons/md'
+import {TbWorld} from 'react-icons/tb'
 const IpInformation = ({ipInfo, loading}) => {
 
   const [show, setShow] = useState(false);
@@ -17,7 +17,7 @@ const IpInformation = ({ipInfo, loading}) => {
   return (
     <Wrapper>
         <div className='location'>
-          <span onClick={handleShowInfo}><MdLocationPin className='span'/></span>
+          <span onClick={handleShowInfo}><TbWorld className='span'/></span>
         </div>
         {
           loading ? (
