@@ -44,6 +44,8 @@ const SearchEngine = () => {
 
   }
   const getIPAddress = async () => {
+    setLoading(true);
+
     try {
       const IP_KEY = "at_iPdZbBjjZFpxMAg5R5gs3ZY4uKbkv";
       const IP_URL = `https://geo.ipify.org/api/v2/country,city,vpn?apiKey=${IP_KEY}&ipAddress=${ipAddress}`;
@@ -52,11 +54,15 @@ const SearchEngine = () => {
       const myIpAddress = responseTwo.data.ip;
 
       setIpInfo(response.data);
+    setLoading(false);
+
       // setError("")
       // console.log(myIpAddress); // or do whatever you want with the IP address
       setIpAddress(myIpAddress)
     } catch (error) {
       console.error('Error:', error);
+    setLoading(false);
+
     }
   };
     window.addEventListener("load", ()=> {

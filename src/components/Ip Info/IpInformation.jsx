@@ -21,7 +21,7 @@ const IpInformation = ({ipInfo, loading}) => {
         </div>
         {
           loading ? (
-            <p>Loading...</p>
+            <Loading></Loading>
           ) : (
             ipInfo&&(
               <IpInfo>
@@ -203,4 +203,21 @@ const Info = styled.div`
     }
   }
 `;
+const Loading = styled.div`
+
+  width: 50px;
+  height: 50px;
+  border-left: 5px solid white;
+  border-right: 5px solid white;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-radius: 50%;
+  animation: loading 4s linear infinite;
+  margin: 0 auto;
+
+  @keyframes loading {
+    0%{transform: rotate(0deg);}
+    100%{transform: rotate(360deg);}
+  }
+`
 export default IpInformation;
