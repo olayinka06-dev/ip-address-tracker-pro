@@ -54,14 +54,12 @@ const SearchEngine = () => {
       const myIpAddress = responseTwo.data.ip;
 
       setIpInfo(response.data);
-    setLoading(false);
+      setLoading(false);
 
-      // setError("")
-      // console.log(myIpAddress); // or do whatever you want with the IP address
       setIpAddress(myIpAddress)
     } catch (error) {
       console.error('Error:', error);
-    setLoading(false);
+      setLoading(false);
 
     }
   };

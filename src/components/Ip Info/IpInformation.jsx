@@ -214,6 +214,7 @@ const Loading = styled.div`
   border-radius: 50%;
   animation: loading 4s linear infinite;
   margin: 0 auto;
+  margin-bottom: 80px;
 
   @keyframes loading {
     0%{transform: rotate(0deg);}
