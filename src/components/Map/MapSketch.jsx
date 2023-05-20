@@ -24,7 +24,11 @@ const MapSketch = ({ipInfo}) => {
       
   return (
     <Wrapper>
-        <Map id="map"  ref={(el) => setMap(el)}></Map>
+        {
+            ipInfo&&(
+                <Map id="map"  ref={(el) => setMap(el)}></Map>
+            )
+        }
     </Wrapper>
   )
 }

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import '../../index.css';
 import {MdLocationPin} from 'react-icons/md'
-const IpInformation = ({ipInfo}) => {
+const IpInformation = ({ipInfo, loading}) => {
 
   const [show, setShow] = useState(false);
   const [showInfo, setShowInfo] = useState(false);
@@ -20,8 +20,11 @@ const IpInformation = ({ipInfo}) => {
           <span onClick={handleShowInfo}><MdLocationPin className='span'/></span>
         </div>
         {
-          ipInfo && (
-            <IpInfo>
+          loading ? (
+            <p>Loading...</p>
+          ) : (
+            ipInfo&&(
+              <IpInfo>
               <Info>
                 <h4>IP Address</h4>
                 <h2>{ipInfo.ip}</h2>
@@ -50,6 +53,7 @@ const IpInformation = ({ipInfo}) => {
                 <h2>{ipInfo.location.isp}</h2>
               </Info>
             </IpInfo>
+            )
           )
         }
         {

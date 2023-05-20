@@ -11,8 +11,10 @@ const SearchEngine = () => {
   const [ipAddress, setIpAddress] = useState("");
   const [ipInfo, setIpInfo] = useState("");
   const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
     if (!ipAddress) {
       setError("Please enter Your Ip Address");
       return;
@@ -25,8 +27,10 @@ const SearchEngine = () => {
 
       setIpInfo(response.data);
       setError("")
+      setLoading(false);
       
     } catch (error) {
+      setLoading(false);
       if (error.response) {
         setError("Ip Address not Found")
       }
@@ -81,6 +85,7 @@ const SearchEngine = () => {
         <Base>
           <IpInformation
             ipInfo={ipInfo}
+            loading={loading}
           />
         </Base>
       </Center>
