@@ -34,7 +34,7 @@ const IpInformation = ({ipInfo, loading}) => {
                 <Showmore>
                   <h2>{ipInfo.location.country}</h2>
                   <button onClick={handleClick}>
-                  <p style={{zIndex: "600 !important"}}>show more</p>
+                  <p style={{zIndex: "1000 !important"}}>show more</p>
                   <div style={{height: `${show ? "15vh" : "0vh"}`, transition: "all 1s ease", width: "200px", backgroundColor: "white"}}>
                     <h3><span>Region:</span> {ipInfo.location.region}</h3>
                     <h3><span>City:</span> {ipInfo.location.city}</h3>
@@ -214,7 +214,8 @@ const Loading = styled.div`
   border-radius: 50%;
   animation: loading 4s linear infinite;
   margin: 0 auto;
-  margin-bottom: 80px;
+  position: relative;
+  bottom: 30px;
 
   @keyframes loading {
     0%{transform: rotate(0deg);}
