@@ -4,9 +4,12 @@ import 'leaflet/dist/leaflet.css';
 import 'leaflet/dist/leaflet.js';
 import styled from 'styled-components';
 import '../../index.css';
+import { FaMapMarkerAlt } from 'react-icons/fa';
+import ReactDOMServer from 'react-dom/server';
 
 const MapSketch = ({ipInfo}) => {
     const [map, setMap] = useState(null);
+
 
     useEffect(() => {
         if (map && ipInfo) {
@@ -14,7 +17,12 @@ const MapSketch = ({ipInfo}) => {
             L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
                 maxZoom: 18,
             }).addTo(leafletMap);
-            L.marker([ipInfo.location.lat, ipInfo.location.lng]).addTo(leafletMap)
+            L.marker([ipInfo.location.lat, ipInfo.location.lng], {
+                icon: L.divIcon({
+                  html: ReactDOMServer.renderToString(<FaMapMarkerAlt style={{fontSize: "30px"}} />)
+                })
+              })
+                .addTo(leafletMap)
                 .bindPopup(`<b>Country: ${ipInfo.location.country}</b><br>City: ${ipInfo.location.city}<br>Region: ${ipInfo.location.region}`)
                 .openPopup();
             return () => leafletMap.remove();
