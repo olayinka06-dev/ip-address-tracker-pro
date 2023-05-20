@@ -34,11 +34,11 @@ const IpInformation = ({ipInfo, loading}) => {
                 <Showmore>
                   <h2>{ipInfo.location.country}</h2>
                   <button onClick={handleClick}>
-                  <p style={{zIndex: "30"}}>show more</p>
-                  <div style={{height: `${show ? "15vh" : "0vh"}`, transition: "all 1s ease", backgroundColor: "white"}}>
-                    <h3>Region: {ipInfo.location.region}</h3>
-                    <h3>City: {ipInfo.location.city}</h3>
-                    <h3>PostalCode: {ipInfo.location.postalCode}</h3>
+                  <p style={{zIndex: "600 !important"}}>show more</p>
+                  <div style={{height: `${show ? "15vh" : "0vh"}`, transition: "all 1s ease", width: "200px", backgroundColor: "white"}}>
+                    <h3><span>Region:</span> {ipInfo.location.region}</h3>
+                    <h3><span>City:</span> {ipInfo.location.city}</h3>
+                    <h3><span>PostalCode:</span> {ipInfo.location.postalCode}</h3>
                   </div>
                   </button>
                 </Showmore>
@@ -58,7 +58,7 @@ const IpInformation = ({ipInfo, loading}) => {
         }
         {
           ipInfo && (
-            <IpInfoMobile style={{transform: `scale(${showInfo ? "100%" : "0%"})`, padding: `${showInfo ? "20px" : "0px"}`}}>
+            <IpInfoMobile style={{transform: `scale(${showInfo ? "100%" : "0%"})`, height: `${showInfo ? "60vh" : "0vh"}`, padding: `${showInfo ? "20px" : "0px"}`}}>
               <Info>
                 <h4>IP Address</h4>
                 <h2>{ipInfo.ip}</h2>
@@ -139,9 +139,11 @@ const IpInfoMobile = styled.div`
     background-color: white;
     border-radius: 20px;
     z-index: 20;
+    height: 0;
     gap: 12px;
     transition: all 1s ease;
     overflow: hidden;
+    padding: 0;
     h2{
       font-size: 20px;
     }
@@ -165,6 +167,9 @@ const Showmore = styled.div`
     display: flex;
     flex-direction: column;
     gap: 5px;
+  }
+  span{
+    color: #b3aeae;
   }
   @media screen and (max-width: 950px) {
     flex-direction: column;

@@ -142,7 +142,7 @@ const Base = styled.div`
 width: 80%;
   position: absolute;
   top: 33% !important;
-  z-index: 1000;
+  z-index: 500;
 `;
 const Input = styled.input`
   width: 85%;
