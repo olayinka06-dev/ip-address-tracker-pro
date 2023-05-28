@@ -225,7 +225,6 @@ const Loading = styled.div`
   }
 
   @media screen and (max-width: 950px) {
-    margin-bottom: 10px !important;
     height: 40px;
     width: 40px;
   }

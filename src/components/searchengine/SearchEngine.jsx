@@ -60,7 +60,7 @@ const SearchEngine = () => {
       setIpAddress(myIpAddress)
     } catch (error) {
       if (error.response) {
-        setError("Ip Address not Found")
+        setError("Device does not have an Ip Address")
       }
       else if (error.request) {
         setError("Network Error, Please Check your Internet Connection")
@@ -69,6 +69,8 @@ const SearchEngine = () => {
         setError("Something Went Wrong Unexpectedly")
       }
       setLoading(false);
+      setError("Device does not have an Ip Address")
+
 
     }
   };
