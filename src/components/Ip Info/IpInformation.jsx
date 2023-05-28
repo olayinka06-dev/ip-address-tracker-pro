@@ -16,43 +16,45 @@ const IpInformation = ({ipInfo, loading}) => {
 
   return (
     <Wrapper>
-        <div className='location'>
-          <span onClick={handleShowInfo}><TbWorld className='span'/></span>
-        </div>
         {
           loading ? (
             <Loading></Loading>
           ) : (
             ipInfo&&(
-              <IpInfo>
-              <Info>
-                <h4>IP Address</h4>
-                <h2>{ipInfo.ip}</h2>
-              </Info>
-              <Info>
-                <h4>Location</h4>
-                <Showmore>
-                  <h2>{ipInfo.location.country}</h2>
-                  <button onClick={handleClick}>
-                  <p style={{zIndex: "1000 !important"}}>show more</p>
-                  <div style={{height: `${show ? "15vh" : "0vh"}`, transition: "all 1s ease", width: "200px", backgroundColor: "white"}}>
-                    <h3><span>Region:</span> {ipInfo.location.region}</h3>
-                    <h3><span>City:</span> {ipInfo.location.city}</h3>
-                    <h3><span>PostalCode:</span> {ipInfo.location.postalCode}</h3>
-                  </div>
-                  </button>
-                </Showmore>
-                </Info>
-              {/*  */}
-              <Info>
-                <h4>Timezone</h4>
-                <h2>UTC {ipInfo.location.timezone}</h2>
-              </Info>
-              <Info>
-                <h4>ISP</h4>
-                <h2>{ipInfo.location.isp}</h2>
-              </Info>
-            </IpInfo>
+              <>
+                <div className='location'>
+                  <span onClick={handleShowInfo}><TbWorld className='span'/></span>
+                </div>
+                <IpInfo>
+                  <Info>
+                    <h4>IP Address</h4>
+                    <h2>{ipInfo.ip}</h2>
+                  </Info>
+                  <Info>
+                    <h4>Location</h4>
+                    <Showmore>
+                      <h2>{ipInfo.location.country}</h2>
+                      <button onClick={handleClick}>
+                      <p style={{zIndex: "1000 !important"}}>show more</p>
+                      <div style={{height: `${show ? "15vh" : "0vh"}`, transition: "all 1s ease", width: "200px", backgroundColor: "white"}}>
+                        <h3><span>Region:</span> {ipInfo.location.region}</h3>
+                        <h3><span>City:</span> {ipInfo.location.city}</h3>
+                        <h3><span>PostalCode:</span> {ipInfo.location.postalCode}</h3>
+                      </div>
+                      </button>
+                    </Showmore>
+                    </Info>
+                  {/*  */}
+                  <Info>
+                    <h4>Timezone</h4>
+                    <h2>UTC {ipInfo.location.timezone}</h2>
+                  </Info>
+                  <Info>
+                    <h4>ISP</h4>
+                    <h2>{ipInfo.location.isp}</h2>
+                  </Info>
+                </IpInfo>
+              </>
             )
           )
         }
@@ -220,6 +222,12 @@ const Loading = styled.div`
   @keyframes loading {
     0%{transform: rotate(0deg);}
     100%{transform: rotate(360deg);}
+  }
+
+  @media screen and (max-width: 950px) {
+    margin-bottom: 10px !important;
+    height: 40px;
+    width: 40px;
   }
 `
 export default IpInformation;

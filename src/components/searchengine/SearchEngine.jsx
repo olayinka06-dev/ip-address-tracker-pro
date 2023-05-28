@@ -17,6 +17,7 @@ const SearchEngine = () => {
     setLoading(true);
     if (!ipAddress) {
       setError("Please enter Your Ip Address");
+      setLoading(false)
       return;
     }
 
@@ -55,10 +56,18 @@ const SearchEngine = () => {
 
       setIpInfo(response.data);
       setLoading(false);
-
+      setError("")
       setIpAddress(myIpAddress)
     } catch (error) {
-      console.error('Error:', error);
+      if (error.response) {
+        setError("Ip Address not Found")
+      }
+      else if (error.request) {
+        setError("Network Error, Please Check your Internet Connection")
+      }
+      else{
+        setError("Something Went Wrong Unexpectedly")
+      }
       setLoading(false);
 
     }
